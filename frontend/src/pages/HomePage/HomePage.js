@@ -3,7 +3,7 @@ import useAuth from "../../hooks/useAuth";
 
 import axios from "axios";
 import { Link } from "react-router-dom";
-// TODO: Add the following pages: 'Bookshelf', 'Search', 'Book', 'Book Info'
+// TODO: Add the following pages: 'Book', 'Book Info'
 const HomePage = () => {
   // The "user" value from this Hook contains the decoded logged in user information (username, first name, id)
   // The "token" value is the JWT token that you will send in the header of any request requiring authentication
