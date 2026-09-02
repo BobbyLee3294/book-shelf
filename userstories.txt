@@ -1,0 +1,20 @@
+As a __________, I want to _____________ so that I can _____________.
+    the who, what and why?
+
+As a book lover, I want to be able to see other users' bookshelves if I am already a user of the app so I can see if we share any similar titles to later comment about.
+
+As an user, I want to be to sort books via a shelf sorting ability (a way to organize a collection of books by genre, theme, or other catergories ) so I can share with others on my profile page.
+
+As an developer, I want to include the ability to navigate between multiple bookshelves with the use of a vertical navbar so that I can keep track of the combination of pre-made and user-generated bookshelves on the frontend.
+
+As a nostalgic loving UX artist, I want to maintain the bridge between early 90s era UX design and today's UX typical layout so that the user experience is unique but familiar.
+
+As a developer, I want to include a point and achievement system so I can give users a sense of pride in their collection of books.
+
+As a user, I want to have the ability to comment on other user's bookshelves so that I can share my thoughts on their selection.
+
+As a developer, I want to implement a feature that will allow the user to search via single or multiple parameters such as the title, or author's name via the API so that I can show the user other related titles they may want to add to the pre generated shelves
+
+As a developer, I want to implement a feature that will allow the user to personally add books to the pre-generated bookshelf so that I can show the proper sorting of bookshelves.
+
+As a user, I want to see a collection related to a current book so that I can continue to grow my collection and reduce API requests.
