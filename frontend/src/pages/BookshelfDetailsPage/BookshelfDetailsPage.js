@@ -3,8 +3,13 @@ import { useLocation } from "react-router-dom";
 import Bookshelf from "../../components/Bookshelf/Bookshelf";
 
 const BookshelfDetailsPage = () => {
-  // TODO: figure out a way to pass bookshelf data from BookshelfListPage to here
+  // TODO #1: Combine "Book" and "Book Info" pages
+  // TODO #2: Display book title, author, and other info
+  // TODO #3: Allow editing or removing books from the shelf
+  // TODO #4: Use a route such as '/bookshelves/:bookshelfId'
+  // TODO #5
   const { state } = useLocation();
+  const { bookshelfId } = useParams();
 
   return (
     <div>
