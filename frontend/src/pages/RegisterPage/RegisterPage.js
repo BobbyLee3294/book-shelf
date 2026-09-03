@@ -13,62 +13,68 @@ const RegisterPage = () => {
   };
   const [formData, handleInputChange, handleSubmit] = useCustomForm(
     defaultValues,
-    registerUser
+    registerUser,
   );
 
   return (
     <div className="container">
       <form className="form" onSubmit={handleSubmit}>
-        <label>
-          Username:{" "}
-          <input
-            type="text"
-            name="username"
-            value={formData.username}
-            onChange={handleInputChange}
-          />
-        </label>
-        <label>
-          First Name:{" "}
-          <input
-            type="text"
-            name="firstName"
-            value={formData.firstName}
-            onChange={handleInputChange}
-          />
-        </label>
-        <label>
-          Last Name:{" "}
-          <input
-            type="text"
-            name="lastName"
-            value={formData.lastName}
-            onChange={handleInputChange}
-          />
-        </label>
-        <label>
-          Email:{" "}
-          <input
-            type="text"
-            name="email"
-            value={formData.email}
-            onChange={handleInputChange}
-          />
-        </label>
-        <label>
-          Password:{" "}
-          <input
-            type="password"
-            name="password"
-            value={formData.password}
-            onChange={handleInputChange}
-          />
-        </label>
-        <p style={{ fontSize: "12px" }}>
-          NOTE: Make this an uncommon password with characters, numbers, and
-          special characters!
+        <h1>Create your bookshelf account</h1>
+        <label htmlFor="username">Username</label>
+        <input
+          id="username"
+          type="text"
+          name="username"
+          autoComplete="username"
+          required
+          value={formData.username}
+          onChange={handleInputChange}
+        />
+        <label htmlFor="firstName">First name</label>
+        <input
+          id="firstName"
+          type="text"
+          name="firstName"
+          autoComplete="given-name"
+          required
+          value={formData.firstName}
+          onChange={handleInputChange}
+        />
+        <label htmlFor="lastName">Last name</label>
+        <input
+          id="lastName"
+          type="text"
+          name="lastName"
+          autoComplete="family-name"
+          required
+          value={formData.lastName}
+          onChange={handleInputChange}
+        />
+        <label htmlFor="email">Email</label>
+        <input
+          id="email"
+          type="email"
+          name="email"
+          autoComplete="email"
+          required
+          value={formData.email}
+          onChange={handleInputChange}
+        />
+        <label htmlFor="password">Password</label>
+        <input
+          id="password"
+          type="password"
+          name="password"
+          autoComplete="new-password"
+          required
+          value={formData.password}
+          onChange={handleInputChange}
+        />
+        <p className="form-help" id="password-help">
+          Use an uncommon password with letters, numbers, and special
+          characters.
         </p>
-        <button>Register!</button>
+        <button type="submit">Create account</button>
       </form>
     </div>
   );

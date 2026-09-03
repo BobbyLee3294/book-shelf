@@ -9,7 +9,7 @@ const LoginPage = () => {
   const defaultValues = { username: "", password: "" };
   const [formData, handleInputChange, handleSubmit, reset] = useCustomForm(
     defaultValues,
-    loginUser
+    loginUser,
   );
 
   useEffect(() => {
@@ -21,29 +21,34 @@ const LoginPage = () => {
   return (
     <div className="container">
       <form className="form" onSubmit={handleSubmit}>
-        <label>
-          Username:{" "}
-          <input
-            type="text"
-            name="username"
-            value={formData.username}
-            onChange={handleInputChange}
-          />
-        </label>
-        <label>
-          Password:{" "}
-          <input
-            type="password"
-            name="password"
-            value={formData.password}
-            onChange={handleInputChange}
-          />
-        </label>
+        <h1>Log in to your bookshelf</h1>
+        <label htmlFor="username">Username</label>
+        <input
+          id="username"
+          type="text"
+          name="username"
+          autoComplete="username"
+          required
+          value={formData.username}
+          onChange={handleInputChange}
+        />
+        <label htmlFor="password">Password</label>
+        <input
+          id="password"
+          type="password"
+          name="password"
+          autoComplete="current-password"
+          required
+          value={formData.password}
+          onChange={handleInputChange}
+        />
         {isServerError ? (
-          <p className="error">Login failed, incorrect credentials!</p>
+          <p className="error" role="alert">
+            Login failed. Check your username and password.
+          </p>
         ) : null}
         <Link to="/register">Click to register!</Link>
-        <button>Login!</button>
+        <button type="submit">Log in</button>
       </form>
     </div>
   );

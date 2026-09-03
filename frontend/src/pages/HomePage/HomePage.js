@@ -26,20 +26,20 @@ const HomePage = () => {
   }
   return (
     <div className="container">
-      <h1>Home Page for {user.username}!</h1>
+      <h1>Welcome, {user.username}</h1>
       <div>
-        <h3>Something to think about {user.first_name}</h3>
+        <h2>Something to think about, {user.first_name}</h2>
         <br />
-        <p>{quote}</p>
+        <p aria-live="polite">{quote || "Loading a thought for today..."}</p>
       </div>
       <div>
-        <Link to="/search">
-          <button>Find books</button>
+        <Link className="button" to="/search">
+          Find books
         </Link>
       </div>
       <div>
-        <Link to="/bookshelf_list">
-          <button>Bookshelves</button>
+        <Link className="button" to="/bookshelf_list">
+          View bookshelves
         </Link>
       </div>
     </div>

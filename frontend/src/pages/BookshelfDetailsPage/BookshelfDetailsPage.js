@@ -1,5 +1,5 @@
 import React from "react";
-import { useLocation, useParams } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import Bookshelf from "../../components/Bookshelf/Bookshelf";
 
 const BookshelfDetailsPage = () => {
@@ -9,7 +9,6 @@ const BookshelfDetailsPage = () => {
   // TODO #4: Use a route such as '/bookshelves/:bookshelfId'
   // TODO #5
   const { state } = useLocation();
-  const { bookshelfId } = useParams();
 
   return (
     <div>

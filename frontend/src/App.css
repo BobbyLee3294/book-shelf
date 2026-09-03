@@ -13,24 +13,66 @@ html {
   font-family: "Poppins", sans-serif;
 }
 
+body {
+  background: #f6f8fb;
+  color: #1f2933;
+  line-height: 1.5;
+}
+
+button,
+input {
+  line-height: 1.5;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible {
+  outline: 3px solid #f4b942;
+  outline-offset: 3px;
+}
+
+.app-shell {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+  padding: 0 1rem 3rem;
+}
+
+.skip-link {
+  background: #ffffff;
+  color: #174a68;
+  left: 1rem;
+  padding: 0.75rem 1rem;
+  position: absolute;
+  top: -5rem;
+  z-index: 100;
+}
+
+.skip-link:focus {
+  top: 1rem;
+}
+
 p {
   font-size: 20px;
 }
 
 button {
   background-color: transparent;
-  border: 2px solid steelblue;
-  color: steelblue;
+  border: 2px solid #174a68;
+  color: #174a68;
   font-size: 1rem;
   font-family: inherit;
-  max-width: 100px;
-  padding: 0.5rem 0.5rem;
+  padding: 0.55rem 0.85rem;
 }
 
 button:hover {
   cursor: pointer;
   color: white;
-  background-color: steelblue;
+  background-color: #174a68;
 }
 
 .container {
@@ -48,13 +90,34 @@ button:hover {
   gap: 1rem;
 }
 
+.form h1 {
+  font-size: 1.8rem;
+}
+
+.form-help {
+  font-size: 0.85rem;
+  max-width: 30rem;
+}
+
 .form input {
   display: block;
   width: 100%;
-  height: 25px;
-  margin: 5px;
-  padding: 3px 7px;
+  min-height: 2.75rem;
+  padding: 0.5rem 0.75rem;
   font-size: 17px;
+}
+
+.button {
+  background: #174a68;
+  color: #ffffff;
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.55rem 0.85rem;
+  text-decoration: none;
+}
+
+.button:hover {
+  background: #0d354c;
 }
 
 .search-page {
@@ -72,7 +135,12 @@ button:hover {
 .book-search input {
   flex: 1;
   font: inherit;
+  min-height: 2.75rem;
   padding: 0.65rem;
+}
+
+.book-search label {
+  align-self: center;
 }
 
 .shelf-picker {
@@ -101,6 +169,10 @@ button:hover {
   height: 150px;
   object-fit: cover;
   width: 100px;
+}
+
+.book-result a {
+  color: #174a68;
 }
 
 .cover-placeholder {

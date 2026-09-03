@@ -1,6 +1,5 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
 
 const API_URL = "http://127.0.0.1:8000/api/bookshelves/";
@@ -64,12 +63,15 @@ const SearchPage = () => {
   }
 
   return (
-    <main className="search-page">
+    <section className="search-page">
       <h1>Find your next book</h1>
       <form className="book-search" onSubmit={searchBooks}>
+        <label htmlFor="book-query">Search by title or author</label>
         <input
-          aria-label="Search books"
+          id="book-query"
+          type="search"
           placeholder="Search by title or author"
+          required
           value={query}
           onChange={(event) => setQuery(event.target.value)}
         />
@@ -77,9 +79,10 @@ const SearchPage = () => {
           {loading ? "Searching..." : "Search"}
         </button>
       </form>
-      <label className="shelf-picker">
+      <label className="shelf-picker" htmlFor="shelf-picker">
         Save to
         <select
+          id="shelf-picker"
           value={selectedShelf}
           onChange={(event) => setSelectedShelf(event.target.value)}
         >
@@ -94,7 +97,7 @@ const SearchPage = () => {
       <section className="book-results" aria-live="polite">
         {results.map((book) => (
           <article className="book-result" key={book.key}>
-            <Link to={`/book/${book.key}`}>
+            <div>
               {book.cover_i ? (
                 <img
                   src={`https://covers.openlibrary.org/b/id/${book.cover_i}-M.jpg`}
@@ -117,11 +120,11 @@ const SearchPage = () => {
                   Add to shelf
                 </button>
               </div>
-            </Link>
+            </div>
           </article>
         ))}
       </section>
-    </main>
+    </section>
   );
 };
 

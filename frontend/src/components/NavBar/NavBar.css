@@ -1,19 +1,24 @@
-ul {
+.nav-list {
   display: flex;
   justify-content: space-between;
   list-style-type: none;
 }
 
-li {
+.nav-list li {
   font-size: 1.25rem;
 }
 
 .navBar {
-  background: steelblue;
-  box-shadow: 4px 2px 5px gray;
+  background: #174a68;
+  box-shadow: 0 2px 5px rgba(31, 41, 51, 0.25);
   color: white;
   margin-bottom: 2rem;
   padding: 1.5rem 2rem;
+}
+
+.navBar a {
+  color: white;
+  text-decoration: none;
 }
 
 .navBar button {
@@ -29,7 +34,32 @@ li {
   cursor: pointer;
 }
 
+.nav-link {
+  display: inline-block;
+  margin-right: 1rem;
+  padding: 0.4rem 0.5rem;
+}
+
 .brand {
   cursor: pointer;
   font-size: 2rem;
+}
+
+@media (max-width: 600px) {
+  .nav-list {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .nav-list li:last-child {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .nav-link {
+    margin-right: 0;
+  }
 }

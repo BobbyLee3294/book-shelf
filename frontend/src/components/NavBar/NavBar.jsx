@@ -1,32 +1,34 @@
-import React from "react";
-import { useContext } from "react";
-import { useNavigate, Link } from "react-router-dom";
+import React, { useContext } from "react";
+import { Link } from "react-router-dom";
 import AuthContext from "../../context/AuthContext";
 import "./NavBar.css";
 
 const Navbar = () => {
   const { logoutUser, user } = useContext(AuthContext);
-  const navigate = useNavigate();
   return (
-    <div className="navBar">
-      <ul>
+    <nav className="navBar" aria-label="Primary navigation">
+      <ul className="nav-list">
         <li className="brand">
-          <Link to="/" style={{ textDecoration: "none", color: "white" }}>
-            <b>React/Django JWT</b>
-          </Link>
+          <Link to="/">React/Django JWT</Link>
         </li>
         <li>
           {user ? (
             <>
-              <button onClick={() => navigate("/search")}>Find books</button>
-              <button onClick={logoutUser}>Logout</button>
+              <Link className="nav-link" to="/search">
+                Find books
+              </Link>
+              <button type="button" onClick={logoutUser}>
+                Logout
+              </button>
             </>
           ) : (
-            <button onClick={() => navigate("/login")}>Login</button>
+            <Link className="nav-link" to="/login">
+              Login
+            </Link>
           )}
         </li>
       </ul>
-    </div>
+    </nav>
   );
 };
 
